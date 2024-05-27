@@ -92,7 +92,7 @@ app.use("/api/chat", chatRoutes);
 //serve frontend files in production mode only
 
 app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "../client/dist", "index.html"));
+  res.sendFile(path.join(process.cwd(), "../client/dist", "index.html"));
 });
 
 app.use(errorHandlerMiddleware);
